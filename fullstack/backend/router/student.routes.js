@@ -1,15 +1,12 @@
-import { Router } from "express";
+import express from "express"
+const studentRouter=express.Router()
 
-const teachers=Router()
-teachers.get("/",(req,res)=>{
-    res.send("Welcome to teachers")
+studentRouter.get("/",(req,res)=>{
+res.send({msg:"All students data here"})
 })
 
-teachers.get("/get",(req,res)=>{
-    res.send("Get req teacher")
-})
-teachers.post("/post",(req,res)=>{
-    res.send("Post req teacher")
+studentRouter.get("/add",(req,res)=>{
+    res.send("Adding a new student")
 })
 
-export default teachers
+export default studentRouter
